@@ -16,8 +16,6 @@ export default class ProbeTestCase {
         this.actions = actions;
     }
 
-    
-
     async execute() {
         console.log(`Executing test case: ${this.testCaseName}`);
         console.log(`URL: ${this.url}`);
