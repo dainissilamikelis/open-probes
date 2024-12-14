@@ -1,28 +1,21 @@
-import ChromeHelper from "./src/chromeHelpers";
-import CDPWebSocketClient from "./src/connection";
+import ProbeTestAction, { eProbeActionTypes } from "./src/action";
+import ProbeTestCase, { eProbeExecutor } from "./src/probeTestCase";
 
 async function debug(): Promise<void> {
-    const chromeHelper = new ChromeHelper();
-    const debugInformation = await chromeHelper.extractJSONinformation();
-    const client = new CDPWebSocketClient(debugInformation.webSocketDebuggerUrl);
+    
     try {
-      
+        const action1 = new ProbeTestAction(eProbeActionTypes.goTo, { url: "https://www.google.com" })
 
+        const testCase1 = new ProbeTestCase(eProbeExecutor.web, "testCase1", "google.com", [action1])
+        await testCase1.execute();
 
-        await client.sendCommand('Page.enable');
-        const result = await client.sendCommand('Page.navigate', {
-            url: 'https://google.com',
-        });
-
-
+     
         console.log('Interaction complete. You can listen for network events or other events.');
 
         // Close after some time
     
     } catch (error) {
         console.error('Error interacting with CDP:', error);
-    } finally {
-        client.close();
     }
     console.log("test 123 123");
 }
