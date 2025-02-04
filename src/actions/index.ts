@@ -18,9 +18,10 @@ export interface iActionProps {
 class ProbeTestAction {
     properties: iActionProps;
     attributes: any;
+    command: eProbeActionTypes;
     constructor(props: iActionProps) {
         this.properties = props;
-        
+        this.command = props.command
         switch(props.command) {
             case eProbeActionTypes.goTo:
                 this.attributes = { url : props.url }
