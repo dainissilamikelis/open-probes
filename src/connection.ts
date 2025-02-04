@@ -23,8 +23,10 @@ class CPDWebSocketClient {
             });
         });
 
-        // Handle incoming messages
-        this.ws.on('message', (data) => this.handleMessage(data.toString()));
+        this.ws.on('message', (data) => {
+            console.log("data", data.toString());
+            this.handleMessage(data.toString())
+        });
 
         this.ws.on('close', () => {
             console.log('WebSocket connection closed.');
@@ -75,9 +77,6 @@ class CPDWebSocketClient {
         });
     }
 
-    /**
-     * Closes the WebSocket connection
-     */
     close(): void {
         this.ws.close();
     }

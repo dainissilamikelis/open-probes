@@ -7,8 +7,9 @@
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "fastify": "^5.2.1",
     "mongodb": "6.12",
-    "puppeteer": "^23.10.4",
+    "puppeteer-core": "^24.1.1",
     "redis": "^4.7.0",
     "ws": "^8.18.0"
   },
@@ -16,6 +17,7 @@
     "@types/ws": "^8.5.13"
   },
   "scripts": {
-    "attach": "sh ./scripts/launch-chrome.sh"
+    "attach": "sh ./scripts/launch-chrome.sh",
+    "attach-headless": "sh ./scripts/launch-chrome-headless.sh"
   }
 }

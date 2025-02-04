@@ -25,6 +25,9 @@ class ProbeTestAction {
             case eProbeActionTypes.goTo:
                 this.attributes = { url : props.url }
                 break;
+            case eProbeActionTypes.waitForNavigation:
+                this.attributes = { }
+                break;
             default:
                 throw new Error("No command defined")
         }

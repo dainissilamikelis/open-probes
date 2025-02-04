@@ -14,7 +14,13 @@ async function debug(): Promise<void> {
             command: eProbeActionTypes.goTo, 
             url: "https://www.1a.lv",
         })
-        const testCase1 = new ProbeTestCase(eProbeExecutor.web, redis, "testCase1", "google.com", [action1])
+
+        const action2 = new ProbeTestAction({
+            command: eProbeActionTypes.waitForNavigation,
+        })
+
+
+        const testCase1 = new ProbeTestCase(eProbeExecutor.web, redis, "testCase1", "google.com", [action1, action2])
         
         
         await testCase1.execute();
