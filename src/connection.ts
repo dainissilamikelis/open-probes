@@ -88,28 +88,3 @@ class CPDWebSocketClient {
     }
 }
 export default CPDWebSocketClient;
-// // Example Usage
-// (async () => {
-//     const wsUrl = 'ws://localhost:9222/devtools/browser/<browser-id>'; // Replace <browser-id> with the actual WebSocket URL ID from http://localhost:9222/json
-//     const client = new WebSocketClient(wsUrl);
-
-//     try {
-//         // Enable the Page domain
-//         await client.sendCommand('Page.enable');
-
-//         // Navigate to a new URL
-//         const result = await client.sendCommand('Page.navigate', {
-//             url: 'https://example.com',
-//         });
-
-//         console.log('Navigation result:', result);
-
-//         // Add a delay to observe the page load
-//         setTimeout(() => {
-//             client.close();
-//             console.log('Connection closed.');
-//         }, 5000);
-//     } catch (error) {
-//         console.error('Error during navigation:', error);
-//     }
-// })();

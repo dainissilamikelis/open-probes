@@ -1,4 +1,4 @@
-import ProbeTestAction, { eProbeActionTypes } from "./src/action";
+import ProbeTestAction, { eProbeActionTypes } from "./src/actions";
 import ProbeTestCase, { eProbeExecutor } from "./src/probeTestCase";
 
 async function debug(): Promise<void> {

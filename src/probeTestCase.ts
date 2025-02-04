@@ -1,4 +1,4 @@
-import ProbeTestAction, { eProbeActionTypes } from "./action";
+import ProbeTestAction, { eProbeActionTypes } from "./actions";
 import ChromeHelper from "./chromeHelpers";
 import CPDWebSocketClient from "./connection";
 
