@@ -10,18 +10,25 @@ export enum eProbeActionTypes {
 }
 export interface iActionProps {
     command: eProbeActionTypes;
-    attributes: any; // for now lets leave as any as it might change
+    url?: string;
+    selector?: string;
+    maxExecution?: number;
 }
 
 class ProbeTestAction {
     properties: iActionProps;
-    constructor(actionType: eProbeActionTypes, attributes: any) {
-        this.properties = {
-            command: actionType,
-            attributes,
+    attributes: any;
+    constructor(props: iActionProps) {
+        this.properties = props;
+        
+        switch(props.command) {
+            case eProbeActionTypes.goTo:
+                this.attributes = { url : props.url }
+                break;
+            default:
+                throw new Error("No command defined")
         }
     }
-
 }
 
 export default ProbeTestAction;

@@ -9,9 +9,13 @@
     "axios": "^1.7.9",
     "mongodb": "6.12",
     "puppeteer": "^23.10.4",
+    "redis": "^4.7.0",
     "ws": "^8.18.0"
   },
   "devDependencies": {
     "@types/ws": "^8.5.13"
+  },
+  "scripts": {
+    "attach": "sh ./scripts/launch-chrome.sh"
   }
 }

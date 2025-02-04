@@ -12,7 +12,8 @@
         "preLaunchTask": "tsc: build - tsconfig.json",
         "outFiles": ["${workspaceFolder}/out/**/*.js"],
         "env": {
-          "port": "9222"
+          "port": "9222",
+          "redisPort" :"6379"
         }
       }
     ]

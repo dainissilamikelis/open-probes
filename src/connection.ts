@@ -64,13 +64,8 @@ class CPDWebSocketClient {
         const command = { id, method, params };
 
         return new Promise<T>((resolve, reject) => {
-            // Store the callback for when the response arrives
             this.callbacks.set(id, { resolve, reject });
-
-            // Send the command over WebSocket
             this.ws.send(JSON.stringify(command));
-
-            // Set up a timeout to reject the promise if no response is received
             setTimeout(() => {
                 if (this.callbacks.has(id)) {
                     this.callbacks.delete(id);

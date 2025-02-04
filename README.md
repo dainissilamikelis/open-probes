@@ -16,3 +16,10 @@ Generally just trying to build some open-source soft and see who might need it
 1. Re-build engine in type-script and classes
 2. Describe API probes
 3. Describe WEB probes
+
+# Project set-up -> locally
+1. install redis 
+
+# Project set-up -> cloud
+
+# Project set-up -> docker
